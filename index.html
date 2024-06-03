@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/universal-sentence-encoder"></script>
+        <script src="index.js"></script>
+    </head>
+    <body>
+       <form>
+           <label for="inBio"></label>
+           <input type="text" id="inBio" name="inBio">
+           <button id="submitButton" type="button" onclick="getUserInput()">Submit</button>
+       </form>
+       <div id="resultHolder"></div>
+    </body>
+</html>
