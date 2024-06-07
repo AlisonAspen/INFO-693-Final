@@ -10,10 +10,8 @@
   var scores = [];
   function getUserInput() {
     userBio = document.getElementById('inBio').value;
-    
 
-
-    if(userBio.length < 3) {
+    if(userBio.length < 3) { //bio must be longer than 3 chars
         console.log('bio too short!');
     } else {
       console.log(userBio);
@@ -28,6 +26,7 @@
           ]
         };
         
+        //calculate embeddings for inputs, output scores for q/r pairs
         const embeddings = model.embed(input);
         scores = tf.matMul(embeddings['queryEmbedding'],
             embeddings['responseEmbedding'], false, true).dataSync();
@@ -38,6 +37,7 @@
     }
   };
  
+  //display socres on html
   function renderScores(scores) {
     console.log('rendering');
     //testing
@@ -49,7 +49,7 @@
 
   };
 
-/*
+/* From TensorFlow's documentation
   use.loadQnA().then(model => {
     // Embed a dictionary of a query and responses. The input to the embed method
     // needs to be in following format:
@@ -64,17 +64,7 @@
     //   context?: string;
     // }
     // context is optional, it provides the context string of the answer.
-    
-    const input = {
-      queries: [userBio],
-      responses: [
-        'I\'m not feeling very well.',
-        'Beijing is the capital of China.',
-        'You have five fingers on your hand.'
-      ]
-    };
-    var scores = [];
-    const embeddings = model.embed(input);
+
     /*
       * The output of the embed method is an object with two keys:
       * {
@@ -84,13 +74,6 @@
       * queryEmbedding is a tensor containing embeddings for all queries.
       * responseEmbedding is a tensor containing embeddings for all answers.
       * You can call `arraySync()` to retrieve the values of the tensor.
-      * In this example, embed_query[0] is the embedding for the query
-      * 'How are you feeling today?'
-      * And embed_responses[0] is the embedding for the answer
-      * 'I\'m not feeling very well.'
-      
-    scores = tf.matMul(embeddings['queryEmbedding'],
-        embeddings['responseEmbedding'], false, true).dataSync();
   }); */
 
 
