@@ -46,10 +46,14 @@
   //display socres on html
   function renderScores(scores) {
     console.log('rendering');
+    //display user input
+    var inputDiv = document.getElementById("inputHolder");
+    var html1 = `<p>Your Bio: ${userBio}</p><br>`;
+    inputDiv.insertAdjacentHTML(html1);
     //testing
     for(var i = 0; i < scores.length; i++) {
       var div = document.getElementById("resultHolder");
-      var html = `<p>Your Bio: ${userBio}</p><br> <p> Name: ${Object.keys(targetBios)[i]} <br> Bio: ${targetBios[Object.keys(targetBios)[i]]} <br> Score: ${scores[i]} </p> <br>`;
+      var html = `<p> Name: ${Object.keys(targetBios)[i]} <br> Bio: ${targetBios[Object.keys(targetBios)[i]]} <br> Score: ${scores[i]} </p> <br>`;
       div.insertAdjacentHTML('beforeend', html);
     }
 
