@@ -49,7 +49,7 @@
     //display user input
     var inputDiv = document.getElementById("inputHolder");
     var html1 = `<p>Your Bio: ${userBio}</p><br>`;
-    inputDiv.innerHTML(html1); 
+    inputDiv.insertAdjacentHTML('beforeend', html1);
     //testing
     for(var i = 0; i < scores.length; i++) {
       var div = document.getElementById("resultHolder");
