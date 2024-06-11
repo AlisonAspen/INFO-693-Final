@@ -2,9 +2,12 @@
 
   var userBio = 'sample bio';
   var targetBios = {
-    'John' : 'Actor and playwright, always involved in local productions. Passionate about all things theater. Let\'s enjoy a show and discuss the arts!',
-    'Medina' : 'Globe-trotter who\'s always on the go. Loves discovering new cultures and cuisines. Seeking a partner in adventure. Next stop: Anywhere!',
-    'Selena' : 'Collector of board games and host of epic game nights. Looking for someone to challenge me in Catan or Ticket to Ride. Roll the dice with me!'
+    'John' : 'Adventurous and free-spirited bisexual looking for someone to share spontaneous road trips and cozy nights in. Passionate about photography, live music, and trying new foods. Let\'s explore the world and create beautiful memories together.',
+    'Medina' : 'Nonbinary individual passionate about social justice and community building. Loves attending rallies, engaging in meaningful dialogue, and exploring local cultural events. Seeking a partner who shares a commitment to making a difference.',
+    'Selena' : 'Lesbian who\'s all about living authentically and loving deeply. I enjoy cooking, gardening, and spending time at the beach. Seeking a genuine connection with someone who values honesty, kindness, and a sense of humor.',
+    'Spencer' : 'Trans man with a love for nature and the great outdoors. When I\'m not hiking or camping, you\'ll find me volunteering at the local animal shelter. Seeking a kind-hearted partner to share adventures and quiet moments under the stars.',
+    'Akul' : 'Gay man with a love for fitness and healthy living. Enjoys running, yoga, and meal prepping. Looking for someone who values wellness and is ready for both active dates and relaxing movie nights. Let\'s motivate each other to be our best selves.',
+    'Jo' : 'Genderfluid writer and gamer. Passionate about storytelling, whether it\'s through novels, video games, or D&D campaigns. Looking for someone who enjoys both quiet nights in and epic fantasy worlds. Let\'s create our own story together.'
   };
   console.log(targetBios.John);
   var scores = [];
@@ -22,7 +25,10 @@
           responses: [
             targetBios.John,
             targetBios.Medina,
-            targetBios.Selena
+            targetBios.Selena,
+            targetBios.Spencer,
+            targetBios.Jo,
+            targetBios.Akul
           ]
         };
         
@@ -43,7 +49,7 @@
     //testing
     for(var i = 0; i < scores.length; i++) {
       var div = document.getElementById("resultHolder");
-      var html = `<p> Name: ${Object.keys(targetBios)[i]} <br> Bio: ${targetBios[Object.keys(targetBios)[i]]} <br> Score: ${scores[i]} </p> <br>`;
+      var html = `<p>Your Bio: ${userBio}</p><br> <p> Name: ${Object.keys(targetBios)[i]} <br> Bio: ${targetBios[Object.keys(targetBios)[i]]} <br> Score: ${scores[i]} </p> <br>`;
       div.insertAdjacentHTML('beforeend', html);
     }
 
